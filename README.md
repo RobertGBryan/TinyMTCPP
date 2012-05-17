@@ -11,18 +11,16 @@ A 2^127-1 period PRNG
 
 (as described in <http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/TINYMT/index.html>)
 
-TinyMT is a new small-sized variant of Mersenne Twister (MT) introduced by
-Mutsuo Saito and Makoto Matsumoto in 2011. There are two types of TinyMT,
-tinymt32 and tinymt64. tinymt32 outputs 32-bit unsigned integers and single
-precision floating point numbers. On the other hand, tinymt64 outputs 64-bit
-unsigned integers and double precision floating point numbers.
+TinyMT is a new small-sized pseudo random number generator variant of Mersenne Twister (MT) introduced by
+Mutsuo Saito and Makoto Matsumoto in 2011.  There are two types of TinyMT, tinymt32 and tinymt64. tinymt32 outputs 32-bit
+unsigned integers and single precision floating point numbers.  On the other hand, tinymt64 outputs 64-bit unsigned integers
+and double precision floating point numbers.
 
-The purpose of TinyMT is not to replace Mersenne Twister. TinyMT has far
+The purpose of TinyMT is not to replace Mersenne Twister. TinyMT has a far
 shorter period than Mersenne Twister. The merit of TinyMT is in its small size
-of the internal state of 127 bits, far smaller than 19937 of Mersenne Twister.
-The purpose of TinyMT may be used in a situation where large state generators
-such as Mersenne Twister are difficult to use. According to statistical test
-(BigCrush), the quality of the outputs of TinyMT seems pretty good, taking the
+of the internal state of 127 bits, far smaller than 19937 bits used by its larger cousin Mersenne Twister.
+The purpose of TinyMT may be used in a situation where a small lightweight object is preferred.
+According to statistical tests (BigCrush), the quality of the outputs of TinyMT seems pretty good, taking the
 small size of the internal state into consideration.
 
 ## TinyMT features
