@@ -1,0 +1,5 @@
+This folder contains the program used to test the C++ version of TinyMT.  The name of this project is TestTinyMTCPP and is a win32 native project.  One of the tests involves verifying that the same random number sequence that is generated with the C++ version is exactly the same as the original C version.  So, the original C files are also in this folder.  They have been modified slightly in order for the project to build correctly under VC++.
+
+The TestTinyMTCPP project references the TinyMT project, which is a VC++ win32 lib project.  To build it correclty, a reference must be included to the TinyMT project.  This can be done in the Solution Explorer window by right clicking on the TestTinyMTCPP project and selecting references.  Likewise for dependencies, the TinyMT project should be selected.  This can be accomplished by right clicking on the TestTinyMTCPP and selecting dependencies.
+
+This project was built with VS 2008 with 3.5 version of the SP1 service pack.

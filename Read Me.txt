@@ -1,0 +1,23 @@
+This project is a port of the TinyMT (Tiny Mersenne Twister) project.  The original was written in C.  This version is written in C++ for windows.  TinyMT consists of 2 classes.  TinyMT32 is a 32 bit class and generates 32 bit random numbers.  TinyMT64 is a 64 bit class and generates 64 bit random numbers.
+
+Folders in this project:
+
+DC Data - contains data values used to initialize the random number generator.  The program TinyMTDC32 or TinyMTDC64 should be used to generate these values depending on wheter TinyMT32 or TinyMT64 is used.  The values include Mat1, Mat2, and TMat.  Only values generated from these programs should be used to initialize these values.
+
+TestRandom - benchmarks how fast the .NET Random class is.  Results show that TinyMT32 is more than twice as fast as the Random.Next method.  The Random.NextBytes method is more than 3 times slower than the TinyMT32.GetRandBytes method.  The TinyMT64.GetRandBytes method is about 5% faster than the TinyMT32.GetRandBytes method.
+
+TestTinyMTCPP - tests the c++ version of TinyMT32 and TinyMT64 against the original C code to make sure that no inadvertent bugs were introduced.  Also includes benchmark tests that show that TinyMT32 is at least 10 times faster than the C++ rand rng method.
+
+TinyMT - contains TinyMT32 class which is used to generate 32 bit random numbers and the TinyMT64 class which is used to generate 64 bit random numbers.  Methods include:
+GetRandInt - returns a 32/64 bit random integer.
+GetRandBytes - returns an array of random bytes.
+GetRandFloat - returns a floating point random number.
+GetRandDouble - returns a double floating point random number.
+Init - can be called directly to re-initialize the rng to a new parameter set without deleting the object.
+InitByArray - uses an array to init the rng.  Not tested.  Left in for compatiblity with the original C code.
+
+TinyMT-src-1.0.1 Orig C Code - the original C code which can also be downloaded from the TinyMT repository on github.
+
+Original authors TinyMT home page:
+
+http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/TINYMT/index.html#tiny

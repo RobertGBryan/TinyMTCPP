@@ -1,0 +1,1 @@
+This folder holds data generated from the 32 bit version of the TinyMTDC program.  This data can be used as inputs for the 3 values that are used to initialize the TinyMT32 random number generator.  These values are specified in the program as Mat1, Mat2, and TMat.  Only values generated from this program should be used to initialize these values.
