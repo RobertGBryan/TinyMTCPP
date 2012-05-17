@@ -12,16 +12,14 @@ A 2^127-1 period PRNG
 (as described in <http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/TINYMT/index.html>)
 
 TinyMT is a new small-sized pseudo random number generator variant of Mersenne Twister (MT) introduced by
-Mutsuo Saito and Makoto Matsumoto in 2011.  There are two types of TinyMT, tinymt32 and tinymt64. tinymt32 outputs 32-bit
-unsigned integers and single precision floating point numbers.  On the other hand, tinymt64 outputs 64-bit unsigned integers
-and double precision floating point numbers.
+Mutsuo Saito and Makoto Matsumoto in 2011.  There are two types of TinyMT - TinyMT32 and TinyMT64. TinyMT32 outputs 32-bit
+unsigned integers and single precision floating point numbers.  TinyMT64 outputs 64-bit unsigned integers and double precision floating point numbers.
 
-The purpose of TinyMT is not to replace Mersenne Twister. TinyMT has a far
-shorter period than Mersenne Twister. The merit of TinyMT is in its small size
-of the internal state of 127 bits, far smaller than 19937 bits used by its larger cousin Mersenne Twister.
-The purpose of TinyMT may be used in a situation where a small lightweight object is preferred.
-According to statistical tests (BigCrush), the quality of the outputs of TinyMT seems pretty good, taking the
-small size of the internal state into consideration.
+The purpose of TinyMT is not to replace Mersenne Twister. TinyMT has a far shorter period than Mersenne Twister. The merit of TinyMT is in its small size of the internal state of 127 bits, far smaller than 19937 bits used by its larger cousin Mersenne Twister.  Even though it has a far smaller state, the period of 2^127 - 1 ~= 1.7e+38 (base 10) is still quite large.  This should be much more than sufficient for most practical applications.
+
+The main reason to use TinyMT is where a small and very fast lightweight object is preferred.  According to statistical tests (BigCrush), the quality of the outputs of TinyMT seems pretty good, taking the small size of the internal state into consideration.
+
+TinyMT32 is at least 10 times faster than the C++ rand() method (tested with VC++ 3.5) and at least twice as fast as the .NET Random.Next class method.  TinyMT32 is also a higher quality rng than Random and much higher quality than the C++ rand() method.
 
 ## TinyMT features
 
@@ -46,4 +44,5 @@ small size of the internal state into consideration.
   1. PeriodCertification - was not doing anything useful.
   2. Redundant floating point methods.
   3. Conversion functions that the above methods call.
-  4, Init1 & Init2 - not being used in the 64 bit initialization methods.
+  4. Init1 & Init2 - not being used in the 64 bit initialization methods.
+* Added benchmark tests against the C++ rand() method and the .NET Random class.
